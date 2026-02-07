@@ -45,3 +45,19 @@ small enterprises.
 ## Status
 This is an early-stage experimental project under active development.
 
+## Research Context and Academic Link
+
+This project is informed by my MSc research and subsequent working paper
+published on SSRN, which examined the impact of emerging technologies
+(artificial intelligence, blockchain, and IoT) on innovation and operational
+efficiency in international business.
+
+One of the key findings of that research was that while emerging technologies
+are widely discussed at a strategic level, many small businesses and
+independent workers struggle to adopt them in simple, practical ways.
+
+This repository represents an applied extension of that research, translating
+academic insights into a basic, real-world automation tool that demonstrates
+how AI-inspired logic can improve everyday business workflows.
+
+
