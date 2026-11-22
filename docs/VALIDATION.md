@@ -8,9 +8,13 @@
 - The local HTTP viewer uses a random session token and limits concurrent streams
 - No code path uploads screen images to an external service
 
+## Verified through GitHub Actions
+
+- [Android build run](https://github.com/VaibhavDureja/ai-gig-worker-assistant/actions/runs/45061179832): unit tests passed and an installable debug APK was produced (not yet tested on a physical phone)
+
 ## Not verified yet
 
-- Android Studio/Gradle compilation (the build environment used for this repository did not contain Android SDK 35)
+- Local Android Studio build on a developer machine (GitHub-hosted Gradle build succeeded, but no local Android Studio installation was available)
 - Successful media capture on physical Android 10 through 16 devices
 - Performance, battery usage, thermal behaviour, low-latency video smoothness
 - Car-browser compatibility, OEM features, CarPlay, Android Auto or head-unit support
