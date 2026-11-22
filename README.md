@@ -48,7 +48,7 @@ The viewer URL contains a temporary token. Do not share it beyond trusted device
 - New Android versions may prompt for single-app or entire-screen sharing; restart the session after rotation if the stream becomes mis-scaled.
 - No remote touch input, CarPlay entitlement, Android Auto support, DRM circumvention, billing or background upload.
 - Local **HTTP** is not TLS-encrypted. Only use on a trusted Wi-Fi/hotspot; do not expose TCP 8765 to the internet.
-- It has not been built or tested on real Android hardware in this execution environment. Review the [validation notes](docs/VALIDATION.md).
+- It **successfully built in GitHub Actions** (Android unit tests and debug APK creation both passed): [verified CI run](https://github.com/VaibhavDureja/ai-gig-worker-assistant/actions/runs/45061179832). It has **not** yet been installed or tested on a real Android phone or car display. Review the [validation notes](docs/VALIDATION.md).
 
 ## Technical architecture
 
@@ -90,4 +90,4 @@ MIT — see [LICENSE](LICENSE).
 
 A GitHub Actions workflow is included at `.github/workflows/android-build.yml`. When uploaded to a GitHub repository's `main` branch (or the temporary `parkcast-prototype` branch), it attempts to compile an unsigned-for-distribution but **debug-signed** test APK using GitHub's free hosted CI. If the build succeeds, download the `ParkCast-debug-apk` artifact from the completed Actions run. This is a development build, not a Play Store release. Only install APKs from code and build runs you trust.
 
-**Build result must be verified:** a workflow file being present does not by itself mean the application has compiled successfully.
+**Verified:** The Android app compiled successfully, its automated token tests passed, and GitHub uploaded a debug APK in [this successful build](https://github.com/VaibhavDureja/ai-gig-worker-assistant/actions/runs/45061179832). Physical-device playback remains untested.
