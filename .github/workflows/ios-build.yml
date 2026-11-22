@@ -1,0 +1,34 @@
+name: ParkCast iOS 27 build
+on:
+  push:
+    branches: [parkcast-prototype]
+    paths:
+      - 'ios/**'
+      - '.github/workflows/ios-build.yml'
+  workflow_dispatch:
+jobs:
+  compile:
+    runs-on: xcode-27
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Xcode
+        run: xcodebuild -version && xcrun --sdk iphonesimulator --show-sdk-version
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate Xcode project
+        working-directory: ios
+        run: xcodegen generate
+      - name: Compile unsigned simulator app
+        working-directory: ios
+        run: |
+          xcodebuild -project ParkCastIOS.xcodeproj -scheme ParkCastIOS \
+            -configuration Debug -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build | tee ios-build.log
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parkcast-ios-build-log
+          path: ios/ios-build.log

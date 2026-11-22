@@ -1,0 +1,30 @@
+name: ParkCastIOS
+options:
+  bundleIdPrefix: io.parkcast
+  deploymentTarget:
+    iOS: "27.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "27.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  ParkCastIOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: ParkCastIOS
+        excludes:
+          - Info.plist
+    info:
+      path: ParkCastIOS/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.parkcast.viewer.ios
+        CODE_SIGNING_ALLOWED: NO
+        ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: NO
+schemes:
+  ParkCastIOS:
+    build:
+      targets:
+        ParkCastIOS: all
