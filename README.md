@@ -26,11 +26,21 @@ Hi Example Customer, thanks for your request for Plumbing on 25 January. I'll co
 
 **Example Customer is a fictional placeholder**, not the project creator.
 
+## Tests and quality checks
+
+This project has three small automated tests for the reply generator. I ran them successfully with Python 3 before adding them to the repository.
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+The GitHub Actions workflow in `.github/workflows/python-tests.yml` is configured to run these tests on pushes and pull requests. Its first GitHub-hosted execution should be checked on the repository's **Actions** tab; local test success does not guarantee the hosted workflow has passed.
+
 ## Project roadmap
 
 - [x] Basic booking acknowledgement generator
 - [ ] Validate booking inputs and handle missing details
-- [ ] Add automated tests
+- [x] Add automated tests for basic message formatting
 - [ ] Create a simple interface for entering booking requests
 - [ ] Add calendar availability checks
 - [ ] Explore AI-assisted customer-request categorisation with appropriate human review
