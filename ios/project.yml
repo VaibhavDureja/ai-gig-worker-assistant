@@ -21,7 +21,6 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.parkcast.viewer.ios
-        CODE_SIGNING_ALLOWED: NO
         ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: NO
 schemes:
   ParkCastIOS:
