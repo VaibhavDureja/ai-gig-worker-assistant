@@ -1,63 +1,59 @@
-# ai-gig-worker-assistant
-AI automation tool to help gig workers manage bookings and customer communication
 # AI Assistant for Gig Workers
 
-## Overview
-This project explores how simple AI-powered automation can help gig workers
-(such as plumbers, electricians, designers, and freelancers) manage customer
-bookings and communication more efficiently.
+**Created by Vaibhav Dureja**
 
-The idea is to reduce manual effort, missed messages, and scheduling confusion
-by using basic automation and AI-generated responses.
+An early-stage Python project exploring how independent workers and small businesses can simplify routine customer-booking communication.
 
-## Why this project
-Many independent workers struggle with:
-- Responding to booking requests quickly
-- Managing schedules across multiple customers
-- Maintaining professional communication while working on-site
+## What works now
 
-This project was created to experiment with how AI and automation can solve
-these practical, real-world problems at a small-business level.
+The `auto_reply(name, service, date)` function returns an acknowledgement message based on information entered by the user.
 
-## What this project does (current stage)
-- Generates automated, professional responses to booking requests
-- Demonstrates basic logic for handling service type and preferred dates
-- Serves as a foundation for future AI-based scheduling and workflow automation
+This is a **rule-based prototype**. It does not currently use a generative AI model, send messages, check availability, schedule appointments, or connect to a calendar.
 
-## Technologies used
-- Python (basic scripting)
-- AI concepts (automation and response generation)
-- GitHub for version control and public documentation
+## Try it
 
-## Future improvements
-Planned enhancements include:
-- Integration with calendar systems
-- AI-based intent detection for customer messages
-- Simple web or chat interface for gig workers
-- Data insights on booking patterns
+Requires Python 3. No additional packages are needed.
 
-## Background
-This project is inspired by my academic research on emerging technologies
-(artificial intelligence, blockchain, and IoT) and my interest in applying
-these technologies to real business challenges faced by individuals and
-small enterprises.
+```bash
+python3 booking_reply.py
+```
 
-## Status
-This is an early-stage experimental project under active development.
+Example output:
 
-## Research Context and Academic Link
+```text
+Hi Example Customer, thanks for your request for Plumbing on 25 January. I'll confirm shortly.
+```
 
-This project is informed by my MSc research and subsequent working paper
-published on SSRN, which examined the impact of emerging technologies
-(artificial intelligence, blockchain, and IoT) on innovation and operational
-efficiency in international business.
+**Example Customer is a fictional placeholder**, not the project creator.
 
-One of the key findings of that research was that while emerging technologies
-are widely discussed at a strategic level, many small businesses and
-independent workers struggle to adopt them in simple, practical ways.
+## Project roadmap
 
-This repository represents an applied extension of that research, translating
-academic insights into a basic, real-world automation tool that demonstrates
-how AI-inspired logic can improve everyday business workflows.
+- [x] Basic booking acknowledgement generator
+- [ ] Validate booking inputs and handle missing details
+- [ ] Add automated tests
+- [ ] Create a simple interface for entering booking requests
+- [ ] Add calendar availability checks
+- [ ] Explore AI-assisted customer-request categorisation with appropriate human review
 
+These are proposed improvements, not completed features.
 
+## About the creator
+
+I'm **Vaibhav Dureja**, based in London, UK. My background combines international business, operations, digital ventures, and research into emerging technologies.
+
+- **MSc International Business (Merit)** — Birkbeck, University of London
+- **BBA** — Amity University Haryana
+- Former **Chair of Student Parliament** and **Chair of Scrutiny Panel** at Birkbeck
+- Professional experience supporting operations across multiple London accommodation properties
+- Founder of **Mooncommerce Limited**
+- Exploring **SupplyCorridor**, an early-stage B2B international trade platform concept
+- Research interests: responsible AI, digital transformation, blockchain, IoT, and business processes
+
+My MSc research examined **emerging technologies and their implications for international business**, focusing on AI, blockchain, and IoT.
+
+**Research working paper:** [SSRN](https://ssrn.com/abstract=6111026)  
+**GitHub:** [VaibhavDureja](https://github.com/VaibhavDureja)
+
+## Project note
+
+This repository demonstrates a small automation concept. It should not be described as a deployed AI product or a working booking platform.
