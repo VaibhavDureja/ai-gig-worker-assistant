@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check Xcode
-        run: xcodebuild -version && xcrun --sdk iphonesimulator --show-sdk-version
+        run: xcodebuild -version && xcrun --sdk iphoneos --show-sdk-version
       - name: Install XcodeGen
         run: brew install xcodegen
       - name: Generate Xcode project
@@ -25,7 +25,7 @@ jobs:
           set -o pipefail
           xcodebuild -project ParkCastIOS.xcodeproj -scheme ParkCastIOS \
             -configuration Debug -sdk iphonesimulator \
-            -destination 'generic/platform=iOS Simulator' \
+            -destination 'generic/platform=iOS' \
             CODE_SIGNING_ALLOWED=NO build | tee ios-build.log
       - name: Upload build log
         if: always()
