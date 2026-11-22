@@ -1,6 +1,11 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-venv/
+.gradle/
+.idea/
+/local.properties
+/build/
+**/build/
+*.iml
 .DS_Store
+*.apk
+*.aab
+*.jks
+*.keystore
