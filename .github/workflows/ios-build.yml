@@ -19,7 +19,7 @@ jobs:
       - name: Generate Xcode project
         working-directory: ios
         run: xcodegen generate
-      - name: Compile unsigned simulator app
+      - name: Compile unsigned iPhone app
         working-directory: ios
         run: |
           set -o pipefail
@@ -27,6 +27,17 @@ jobs:
             -configuration Debug -sdk iphonesimulator \
             -destination 'generic/platform=iOS' \
             CODE_SIGNING_ALLOWED=NO build | tee ios-build.log
+      - name: Upload generated Xcode project and source
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ParkCastIOS-Xcode-project
+          path: |
+            ios/ParkCastIOS.xcodeproj/
+            ios/ParkCastIOS/
+            ios/README.md
+            ios/project.yml
+          if-no-files-found: error
       - name: Upload build log
         if: always()
         uses: actions/upload-artifact@v4
