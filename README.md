@@ -1,69 +1,56 @@
-# AI Assistant for Gig Workers
+# LidLoop — Live Wallpaper for macOS
 
-**Created by Vaibhav Dureja**
+**LidLoop 1.1** is a small, native Swift menu-bar app for playing a local video as an animated desktop wallpaper on macOS. This repository contains the source recovered from the original LidLoop installer archive.
 
-An early-stage Python project exploring how independent workers and small businesses can simplify routine customer-booking communication.
+## Features
 
-## What works now
+- Uses Apple's AppKit and AVFoundation; no third-party dependencies
+- Plays a local MP4 or MOV behind desktop icons
+- Loops playback across connected displays
+- Menu-bar controls for choosing, pausing, resuming and removing a wallpaper
+- Remembers the selected video and paused state
+- Pauses during sleep/display sleep and attempts to restore playback after wake
 
-The `auto_reply(name, service, date)` function returns an acknowledgement message based on information entered by the user.
+**Audio is muted in this version.** The source explicitly sets `player.isMuted = true`. Sound support is not implemented.
 
-This is a **rule-based prototype**. It does not currently use a generative AI model, send messages, check availability, schedule appointments, or connect to a calendar.
+## Build and run on a Mac
 
-## Try it
+**Requirements:** macOS 13 or later, plus Xcode or Apple Command Line Tools with `swiftc`. Mac compatibility and sleep/wake behaviour have not been independently tested for every macOS release.
 
-Requires Python 3. No additional packages are needed.
+1. Download this branch and extract it.
+2. Keep `LidLoop.swift`, `Info.plist`, and `Build and Open.command` in the same folder.
+3. Open Terminal and run:
 
-```bash
-python3 booking_reply.py
-```
+   ```bash
+   cd /path/to/LidLoop_GitHub_Source
+   bash "Build and Open.command"
+   ```
 
-Example output:
+4. The build script compiles and ad-hoc signs `LidLoop.app` locally, then opens it.
+5. Click the **play-rectangle icon** in the macOS menu bar, select **Choose Video…**, and choose a local MP4/MOV video that QuickTime can open.
 
-```text
-Hi Example Customer, thanks for your request for Plumbing on 25 January. I'll confirm shortly.
-```
+You can move the generated app to Applications and optionally enable it in macOS Login Items. Keep the selected video at its original location.
 
-**Example Customer is a fictional placeholder**, not the project creator.
+## Technical notes
 
-## Tests and quality checks
+- Targets macOS 13.0+ using the macOS SDK installed on your Mac.
+- The output is **ad-hoc signed**, not Apple Developer ID signed or notarised.
+- Video selection is stored as a local bookmark in `UserDefaults`, not sent to a server.
+- This repository does not include any copyrighted video assets.
+- Playback uses an `AVQueuePlayer` and `AVPlayerLooper` for each display.
+- The script is not designed to run on Linux or Windows.
 
-This project has three small automated tests for the reply generator. I ran them successfully with Python 3 before adding them to the repository.
+## Testing status
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+The original source archive was decoded and its contents inspected. The build script passes Bash syntax checking and the Info.plist parses as a property list. Actual macOS compilation, desktop playback, and lid-sleep/wake recovery must be tested on a Mac.
 
-The GitHub Actions workflow in `.github/workflows/python-tests.yml` is configured to run these tests on pushes and pull requests. Its first GitHub-hosted execution should be checked on the repository's **Actions** tab; local test success does not guarantee the hosted workflow has passed.
+## Version history
 
-## Project roadmap
+- **1.1:** Recovered native Swift implementation, multi-display looping, sleep/wake handling, and menu-bar controls.
 
-- [x] Basic booking acknowledgement generator
-- [ ] Validate booking inputs and handle missing details
-- [x] Add automated tests for basic message formatting
-- [ ] Create a simple interface for entering booking requests
-- [ ] Add calendar availability checks
-- [ ] Explore AI-assisted customer-request categorisation with appropriate human review
+## Project structure
 
-These are proposed improvements, not completed features.
-
-## About the creator
-
-I'm **Vaibhav Dureja**, based in London, UK. My background combines international business, operations, digital ventures, and research into emerging technologies.
-
-- **MSc International Business (Merit)** — Birkbeck, University of London
-- **BBA** — Amity University Haryana
-- Former **Chair of Student Parliament** and **Chair of Scrutiny Panel** at Birkbeck
-- Professional experience supporting operations across multiple London accommodation properties
-- Founder of **Mooncommerce Limited**
-- Exploring **SupplyCorridor**, an early-stage B2B international trade platform concept
-- Research interests: responsible AI, digital transformation, blockchain, IoT, and business processes
-
-My MSc research examined **emerging technologies and their implications for international business**, focusing on AI, blockchain, and IoT.
-
-**Research working paper:** [SSRN](https://ssrn.com/abstract=6111026)  
-**GitHub:** [VaibhavDureja](https://github.com/VaibhavDureja)
-
-## Project note
-
-This repository demonstrates a small automation concept. It should not be described as a deployed AI product or a working booking platform.
+- `LidLoop.swift` — the application source
+- `Info.plist` — macOS app metadata
+- `Build and Open.command` — local build/sign/launch script
+- `.gitignore` — excludes generated application and temporary files
