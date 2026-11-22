@@ -18,7 +18,11 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Check hosted Android SDK
-        run: |\n          SDKMGR=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)\n          test -x "$SDKMGR"\n          echo "SDKMGR=$SDKMGR" >> "$GITHUB_ENV"\n          echo "Android SDK manager: $SDKMGR"
+        run: |
+          SDKMGR=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)
+          test -x "$SDKMGR"
+          echo "SDKMGR=$SDKMGR" >> "$GITHUB_ENV"
+          echo "Android SDK manager: $SDKMGR"
       - name: Install Android SDK platform
         run: "$SDKMGR" --install "platforms;android-35" "build-tools;35.0.0"
       - name: Set up Gradle 8.9
