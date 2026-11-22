@@ -1,69 +1,28 @@
-# AI Assistant for Gig Workers
+# Vaibhav Dureja — website and GitHub profile source
 
-**Created by Vaibhav Dureja**
+This **portfolio-website** branch is a temporary, version-controlled home for the files behind Vaibhav Dureja's personal professional website and a prepared GitHub profile README. It does **not** replace the main branch's AI Gig Worker Assistant project.
 
-An early-stage Python project exploring how independent workers and small businesses can simplify routine customer-booking communication.
+## Contents
 
-## What works now
+- [Website source](website/) — static HTML and CSS, including the homepage and SupplyCorridor page.
+- [GitHub profile README](github-profile/README.md) — prepared professional introduction, to move to a dedicated public repository named `VaibhavDureja` when that repository is created.
+- [GitHub profile setup notes](github-profile/SETUP.md) — how to make the README appear on the account profile.
+- [Publishing notes](PUBLISHING.md) — how the existing Cloudflare Pages project is configured and updated.
 
-The `auto_reply(name, service, date)` function returns an acknowledgement message based on information entered by the user.
+## Known deployment details
 
-This is a **rule-based prototype**. It does not currently use a generative AI model, send messages, check availability, schedule appointments, or connect to a calendar.
+- **Personal domain:** `vaibhavdureja.com` (purchased through GoDaddy).
+- **Cloudflare Pages hostname used in the earlier deployment:** `vaibhadureja.pages.dev` (this spelling is intentional).
+- **Earlier hosting method:** Cloudflare Pages Direct Upload (ZIP).
 
-## Try it
+Files appearing in GitHub do **not** mean that a new Cloudflare deployment has occurred. The live site should be updated using a fresh deployment to the **existing** Pages project, without creating a new project or changing GoDaddy DNS.
 
-Requires Python 3. No additional packages are needed.
+## Accuracy and scope
 
-```bash
-python3 booking_reply.py
-```
+This website represents emerging-technology research and early-stage ventures at their actual stage of development. The AI Gig Worker Assistant is a basic rule-based Python prototype, not an operational AI platform. SupplyCorridor is a business and research concept, not a deployed marketplace.
 
-Example output:
+## Project status
 
-```text
-Hi Example Customer, thanks for your request for Plumbing on 25 January. I'll confirm shortly.
-```
-
-**Example Customer is a fictional placeholder**, not the project creator.
-
-## Tests and quality checks
-
-This project has three small automated tests for the reply generator. I ran them successfully with Python 3 before adding them to the repository.
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-The GitHub Actions workflow in `.github/workflows/python-tests.yml` is configured to run these tests on pushes and pull requests. Its first GitHub-hosted execution should be checked on the repository's **Actions** tab; local test success does not guarantee the hosted workflow has passed.
-
-## Project roadmap
-
-- [x] Basic booking acknowledgement generator
-- [ ] Validate booking inputs and handle missing details
-- [x] Add automated tests for basic message formatting
-- [ ] Create a simple interface for entering booking requests
-- [ ] Add calendar availability checks
-- [ ] Explore AI-assisted customer-request categorisation with appropriate human review
-
-These are proposed improvements, not completed features.
-
-## About the creator
-
-I'm **Vaibhav Dureja**, based in London, UK. My background combines international business, operations, digital ventures, and research into emerging technologies.
-
-- **MSc International Business (Merit)** — Birkbeck, University of London
-- **BBA** — Amity University Haryana
-- Former **Chair of Student Parliament** and **Chair of Scrutiny Panel** at Birkbeck
-- Professional experience supporting operations across multiple London accommodation properties
-- Founder of **Mooncommerce Limited**
-- Exploring **SupplyCorridor**, an early-stage B2B international trade platform concept
-- Research interests: responsible AI, digital transformation, blockchain, IoT, and business processes
-
-My MSc research examined **emerging technologies and their implications for international business**, focusing on AI, blockchain, and IoT.
-
-**Research working paper:** [SSRN](https://ssrn.com/abstract=6111026)  
-**GitHub:** [VaibhavDureja](https://github.com/VaibhavDureja)
-
-## Project note
-
-This repository demonstrates a small automation concept. It should not be described as a deployed AI product or a working booking platform.
+**Code archived to GitHub:** yes.  
+**Automatically deployed to Cloudflare from this branch:** no.  
+**Current live Cloudflare deployment updated by this commit:** no.
