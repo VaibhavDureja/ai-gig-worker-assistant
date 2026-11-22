@@ -22,6 +22,7 @@ jobs:
       - name: Compile unsigned simulator app
         working-directory: ios
         run: |
+          set -o pipefail
           xcodebuild -project ParkCastIOS.xcodeproj -scheme ParkCastIOS \
             -configuration Debug -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
