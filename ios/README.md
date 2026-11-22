@@ -18,7 +18,7 @@ From this `ios` folder, run `xcodegen generate`, open `ParkCastIOS.xcodeproj`, c
 
 Connect your phone and viewer to the same Wi-Fi. Choose your screen through Apple's picker, open the displayed URL on a browser, and stop sharing from ParkCast when done.
 
-GitHub Actions performs an unsigned simulator build only, which **does not produce an installable iPhone IPA** or establish real-device functionality.
+GitHub Actions compiles against the iOS 27 physical-device SDK with code signing disabled. This confirms source compilation, but **does not create an installable iPhone IPA** or prove screen sharing works on hardware.
 
 ## Structure
 
