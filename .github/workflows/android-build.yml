@@ -24,7 +24,8 @@ jobs:
           echo "SDKMGR=$SDKMGR" >> "$GITHUB_ENV"
           echo "Android SDK manager: $SDKMGR"
       - name: Install Android SDK platform
-        run: "$SDKMGR" --install "platforms;android-35" "build-tools;35.0.0"
+        run: |
+          "$SDKMGR" --install "platforms;android-35" "build-tools;35.0.0"
       - name: Set up Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
