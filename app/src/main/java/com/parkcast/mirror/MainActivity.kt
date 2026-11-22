@@ -53,7 +53,7 @@ class MainActivity : Activity() {
 
     private fun buildScreen() {
         val scroll = ScrollView(this).apply {
-            setBackgroundColor(background)
+            setBackgroundColor(this@MainActivity.background)
             isFillViewport = true
             if (Build.VERSION.SDK_INT >= 30) {
                 setOnApplyWindowInsetsListener { view, insets ->
