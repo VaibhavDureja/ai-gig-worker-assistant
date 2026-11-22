@@ -69,11 +69,7 @@ final class ScreenSharingController: NSObject, ObservableObject {
             stream = nil
             do {
                 let config = SCStreamConfiguration()
-                let size = UIScreen.main.nativeBounds.size
-                config.width = Int(size.width)
-                config.height = Int(size.height)
                 config.capturesAudio = false
-                config.queueDepth = 3
                 let newStream = SCStream(filter: filter, configuration: config, delegate: frameReceiver)
                 try newStream.addStreamOutput(frameReceiver, type: .screen,
                                               sampleHandlerQueue: frameReceiver.queue)
