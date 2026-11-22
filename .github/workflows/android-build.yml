@@ -3,6 +3,12 @@ name: Build free Android prototype
 on:
   push:
     branches: ["main", "parkcast-prototype"]
+    paths:
+      - "app/**"
+      - "build.gradle.kts"
+      - "gradle.properties"
+      - "settings.gradle.kts"
+      - ".github/workflows/android-build.yml"
   pull_request:
 
 jobs:
