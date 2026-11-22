@@ -2,6 +2,12 @@
 
 A free experimental screen-sharing app using Apple's iOS 27 ScreenCaptureKit and system permission picker. It serves reduced-frame-rate JPEG images over a token-protected local Wi-Fi browser link.
 
+## Intended CarPlay product (not yet built)
+
+The intended experience is: open ParkCast on the iPhone, approve screen sharing, connect to CarPlay, **tap the ParkCast icon on the car display**, and view the selected iPhone screen inside the CarPlay app while the vehicle permits parked video. The current browser viewer is a technical prototype, not this CarPlay experience.
+
+The exact technical and entitlement requirements are documented in [CARPLAY_REQUIREMENTS.md](CARPLAY_REQUIREMENTS.md). Apple’s video CarPlay app entitlement and a vehicle with video-in-car support are required before we can claim this works in a real car.
+
 ## Scope and limitations
 
 - **iOS 27+ on a physical iPhone** required. Compilation on a simulator is not a real capture test.
